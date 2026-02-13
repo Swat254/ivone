@@ -3,54 +3,71 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Felix ❤️ Ivone</title>
+<title>Felix ❤️ Ivone Forever</title>
 
 <style>
 body{
     margin:0;
     padding:0;
     font-family:'Segoe UI', sans-serif;
-    background: linear-gradient(135deg,#ff3366,#ff99cc,#cc0066);
+    background:linear-gradient(135deg,#ff004f,#ff66a3,#990033);
     overflow:hidden;
     color:white;
     text-align:center;
 }
 
-/* Main Box */
+/* Container */
 .container{
     position:relative;
-    top:12%;
+    top:8%;
     padding:20px;
     z-index:10;
     animation:fadeIn 3s ease-in-out;
 }
 
+/* Glow Title */
 h1{
-    font-size:42px;
+    font-size:40px;
     animation:glow 2s infinite alternate;
 }
 
 @keyframes glow{
     from{text-shadow:0 0 10px white;}
-    to{text-shadow:0 0 35px #ffcccc,0 0 60px red;}
+    to{text-shadow:0 0 40px pink,0 0 70px red;}
 }
 
+/* Names */
 .names{
-    font-size:26px;
+    font-size:24px;
     margin-top:10px;
     letter-spacing:2px;
 }
 
+/* Beating Heart */
+.beat{
+    font-size:40px;
+    animation:beat 1s infinite;
+}
+
+@keyframes beat{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.3);}
+    100%{transform:scale(1);}
+}
+
+/* Long Message */
 .message{
-    font-size:21px;
-    margin-top:25px;
-    min-height:120px;
-    line-height:1.7;
+    font-size:20px;
+    margin-top:20px;
+    line-height:1.8;
+    max-width:800px;
+    margin-left:auto;
+    margin-right:auto;
 }
 
 /* Button */
 button{
-    margin-top:30px;
+    margin-top:25px;
     padding:14px 35px;
     font-size:18px;
     border-radius:40px;
@@ -67,24 +84,24 @@ button:hover{
     transform:scale(1.1);
 }
 
-/* Hidden Love Message */
+/* Hidden Section */
 .hidden{
     display:none;
+    font-size:22px;
     margin-top:25px;
-    font-size:23px;
     animation:fadeIn 3s forwards;
 }
 
+/* Fade */
 @keyframes fadeIn{
     from{opacity:0;}
     to{opacity:1;}
 }
 
-/* Floating Hearts */
-.heart{
+/* Floating Hearts & Petals */
+.floating{
     position:absolute;
-    font-size:22px;
-    animation:float 7s linear infinite;
+    animation:float 8s linear infinite;
 }
 
 @keyframes float{
@@ -115,84 +132,99 @@ canvas{
 
 <!-- Romantic Music -->
 <audio autoplay loop>
-<source src="https://cdn.pixabay.com/download/audio/2022/02/23/audio_9f7c9fce43.mp3?filename=romantic-love-11284.mp3" type="audio/mp3">
+<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73467.mp3?filename=romantic-background-11386.mp3" type="audio/mp3">
 </audio>
 
 <canvas id="fireworks"></canvas>
 
 <div class="container">
 
-<h1>Happy Valentine My Love ❤️</h1>
+<h1>Felix ❤️ Ivone</h1>
 
-<div class="names">Felix Nyabuto ❤️ Ivone</div>
+<div class="names">A Love Written in Destiny</div>
 
-<div class="message" id="typeText"></div>
+<div class="beat">❤️</div>
 
-<button onclick="showLove()">Open My Heart Ivone 💖</button>
+<div class="message">
+My Sweet Ivone,  
+
+Every time I look at you, I see my future.  
+Every time you smile, my heart melts.  
+You are the light in my darkest days,  
+the calm in my chaos,  
+the love I prayed for without knowing your name.  
+
+Before you, love was just a word.  
+With you, love became real.  
+
+I don’t just love you because you are beautiful —  
+I love you because you make me a better man.  
+You inspire me.  
+You strengthen me.  
+You complete me.  
+
+Ivone, you are my happiness,  
+my peace,  
+my forever dream.  
+
+And I, Felix Nyabuto,  
+promise to love you deeply,  
+honestly,  
+and endlessly.  
+</div>
+
+<button onclick="showLove()">Click To See My Promise 💖</button>
 
 <div id="finalMessage" class="hidden">
-🌹 My Sweet Ivone,  
+🌹 Ivone,  
 
-From the first moment I met you,  
-my heart chose you.  
+No matter what happens in this world,  
+my heart will always choose you.  
 
-You are my happiness,  
-my peace,  
-my strength,  
-and my forever love.  
+Through struggles.  
+Through success.  
+Through every season of life.  
 
-No matter where life takes us,  
-I promise to stand by you,  
-to protect you,  
-to cherish you,  
-and to love you endlessly.  
+I will hold your hand.  
+I will protect your heart.  
+I will stand beside you.  
 
-You are mine, and I am yours. ❤️  
+You are my once in a lifetime.  
+You are my forever.  
 
 Forever yours,  
-Felix Nyabuto 💕
+Felix Nyabuto ❤️
 </div>
 
 </div>
 
 <div class="signature">
-Made with love by Felix Nyabuto ❤️
+Made with endless love by Felix Nyabuto 💕
 </div>
 
 <script>
 
-/* Romantic Typewriter Message */
-const text = "Ivone, you changed my life in the most beautiful way. 🌸 Every time I look at you, I see my future. Every time you smile, my world becomes brighter. I am so lucky to call you mine. 💕";
-let i = 0;
-
-function typeWriter(){
-    if(i < text.length){
-        document.getElementById("typeText").innerHTML += text.charAt(i);
-        i++;
-        setTimeout(typeWriter,45);
-    }
+/* Floating Hearts + Petals */
+function createFloating(symbol){
+    const el=document.createElement("div");
+    el.className="floating";
+    el.innerHTML=symbol;
+    el.style.left=Math.random()*100+"vw";
+    el.style.fontSize=(20+Math.random()*20)+"px";
+    document.body.appendChild(el);
+    setTimeout(()=>el.remove(),8000);
 }
-typeWriter();
 
-/* Show Final Message + Fireworks */
+setInterval(()=>createFloating("❤️"),400);
+setInterval(()=>createFloating("🌸"),800);
+
+/* Show Message + Fireworks */
 function showLove(){
     document.getElementById("finalMessage").style.display="block";
     launchFireworks();
 }
 
-/* Floating Hearts */
-function createHeart(){
-    const heart = document.createElement("div");
-    heart.className="heart";
-    heart.innerHTML="❤️";
-    heart.style.left=Math.random()*100+"vw";
-    heart.style.fontSize=(20+Math.random()*20)+"px";
-    document.body.appendChild(heart);
-    setTimeout(()=>heart.remove(),7000);
-}
-setInterval(createHeart,400);
-
-/* Fireworks Animation */
+/* Fireworks */
 const canvas=document.getElementById("fireworks");
 const ctx=canvas.getContext("2d");
 canvas.width=window.innerWidth;
@@ -201,14 +233,14 @@ canvas.height=window.innerHeight;
 let particles=[];
 
 function launchFireworks(){
-    for(let i=0;i<120;i++){
+    for(let i=0;i<150;i++){
         particles.push({
             x:canvas.width/2,
             y:canvas.height/2,
             radius:2,
             color:"hsl("+Math.random()*360+",100%,60%)",
-            speedX:(Math.random()-0.5)*8,
-            speedY:(Math.random()-0.5)*8,
+            speedX:(Math.random()-0.5)*10,
+            speedY:(Math.random()-0.5)*10,
             life:100
         });
     }
