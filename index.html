@@ -1,405 +1,329 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Felix ❤️ Ivone</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Felix ❤️ Ivone · forever</title>
+  <style>
+    /* reset & elegant base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-<style>
-body{
-    margin:0;
-    font-family:'Segoe UI', sans-serif;
-    background:linear-gradient(135deg,#ff4b7d,#ff0066);
-    color:white;
-    text-align:center;
-    overflow-x:hidden;
-}
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', 'Roboto', system-ui, -apple-system, sans-serif;
+      background: linear-gradient(145deg, #ff8aa7 0%, #ff4d7a 40%, #d6004c 100%);
+      color: white;
+      text-align: center;
+      overflow-x: hidden;
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
 
-/* Center Section */
-.container{
-    padding:60px 20px;
-    animation:fadeIn 2s ease-in;
-}
+    /* soft blurred overlay for depth */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 30% 40%, rgba(255, 255, 255, 0.2) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 0;
+    }
 
-h1{
-    font-size:38px;
-    margin-bottom:10px;
-}
+    /* main card */
+    .container {
+      max-width: 820px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(14px) saturate(180%);
+      -webkit-backdrop-filter: blur(14px) saturate(180%);
+      border-radius: 56px 56px 48px 48px;
+      padding: 2.8rem 2.2rem;
+      box-shadow: 0 40px 60px rgba(0, 0, 0, 0.3), 0 10px 30px rgba(255, 20, 100, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 220, 235, 0.25);
+      animation: floatIn 1.7s cubic-bezier(0.12, 0.71, 0.33, 1) forwards;
+      position: relative;
+      z-index: 10;
+    }
 
-.names{
-    font-size:20px;
-    margin-bottom:30px;
-    opacity:0.9;
-}
+    @keyframes floatIn {
+      0% { opacity: 0; transform: scale(0.96) translateY(30px); }
+      100% { opacity: 1; transform: scale(1) translateY(0); }
+    }
 
-.message{
-    max-width:700px;
-    margin:auto;
-    font-size:19px;
-    line-height:1.8;
-}
+    h1 {
+      font-size: 4rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      margin-bottom: 0.2rem;
+      text-shadow: 0 10px 20px #b3004b, 2px 4px 10px rgba(0,0,0,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
 
-button{
-    margin-top:30px;
-    padding:14px 35px;
-    font-size:18px;
-    border:none;
-    border-radius:30px;
-    background:white;
-    color:#ff0066;
-    cursor:pointer;
-    transition:0.3s;
-}
+    h1 span {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 0.2rem 0.8rem;
+      border-radius: 100px;
+      font-size: 2.2rem;
+      line-height: 1.4;
+      backdrop-filter: blur(4px);
+    }
 
-button:hover{
-    background:#ff0066;
-    color:white;
-}
+    .names {
+      font-size: 1.45rem;
+      font-weight: 300;
+      letter-spacing: 3px;
+      word-spacing: 8px;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, #ffe6f0, #ffffff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 2rem;
+      border-bottom: 1px dashed rgba(255,255,240,0.6);
+      padding-bottom: 1rem;
+      display: inline-block;
+    }
 
-/* Love Card */
-.card{
-    margin-top:40px;
-    padding:25px;
-    background:rgba(255,255,255,0.1);
-    border-radius:20px;
-    backdrop-filter:blur(10px);
-    display:none;
-    animation:fadeIn 2s forwards;
-}
+    .message {
+      background: rgba(255, 220, 235, 0.1);
+      border-radius: 48px;
+      padding: 2.2rem 2rem;
+      font-size: 1.3rem;
+      line-height: 1.8;
+      text-align: left;
+      font-weight: 350;
+      box-shadow: inset 0 0 30px rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      margin: 2rem 0 1.8rem;
+    }
 
-/* Fade Animation */
-@keyframes fadeIn{
-    from{opacity:0;transform:translateY(20px);}
-    to{opacity:1;transform:translateY(0);}
-}
+    .message p {
+      margin: 0.8rem 0;
+    }
 
-/* Soft Floating Hearts (LESS elements) */
-.heart{
-    position:fixed;
-    font-size:20px;
-    animation:float 6s linear infinite;
-}
+    .message p:first-child {
+      margin-top: 0;
+    }
 
-@keyframes float{
-    from{transform:translateY(100vh);opacity:1;}
-    to{transform:translateY(-10vh);opacity:0;}
-}
+    .message i {
+      display: block;
+      text-align: center;
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+      opacity: 0.95;
+    }
 
-/* Footer */
-footer{
-    margin-top:60px;
-    font-size:14px;
-    opacity:0.8;
-}
-</style>
+    button {
+      margin-top: 1rem;
+      margin-bottom: 1.8rem;
+      padding: 1rem 3.2rem;
+      font-size: 1.4rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 60px;
+      background: white;
+      color: #c2004a;
+      cursor: pointer;
+      transition: 0.3s ease;
+      box-shadow: 0 8px 20px rgba(180, 0, 70, 0.5), 0 0 0 2px rgba(255, 255, 255, 0.3);
+      letter-spacing: 1.2px;
+    }
+
+    button:hover {
+      background: #ff1a66;
+      color: white;
+      transform: scale(1.05) translateY(-3px);
+      box-shadow: 0 18px 30px #a00040;
+    }
+
+    button:active {
+      transform: scale(0.98);
+    }
+
+    /* love card / promise */
+    .card {
+      margin: 2rem 0 1.5rem;
+      padding: 2.5rem 2.2rem;
+      background: rgba(30, 10, 20, 0.3);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-radius: 48px;
+      border: 2px solid rgba(255, 210, 230, 0.6);
+      display: none;
+      font-size: 1.45rem;
+      line-height: 1.8;
+      text-align: center;
+      box-shadow: 0 25px 40px rgba(0, 0, 0, 0.4), inset 0 0 30px rgba(255, 200, 230, 0.3);
+      animation: gentleAppear 0.9s ease forwards;
+      color: #fff3f8;
+    }
+
+    @keyframes gentleAppear {
+      0% { opacity: 0; transform: translateY(20px) scale(0.97); }
+      100% { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .card::first-line {
+      font-size: 2rem;
+    }
+
+    footer {
+      margin-top: 2rem;
+      font-size: 1.15rem;
+      opacity: 0.75;
+      font-style: italic;
+      border-top: 1px solid rgba(255, 255, 255, 0.25);
+      padding-top: 1.5rem;
+      letter-spacing: 0.8px;
+    }
+
+    /* floating hearts — more elegant and soft */
+    .heart {
+      position: fixed;
+      font-size: 1.8rem;
+      user-select: none;
+      pointer-events: none;
+      opacity: 0.7;
+      filter: drop-shadow(0 0 15px #ff99bb);
+      animation: rise 8s linear infinite;
+      z-index: 20;
+      will-change: transform, opacity;
+    }
+
+    @keyframes rise {
+      0% { transform: translateY(110vh) rotate(0deg) scale(1); opacity: 0.6; }
+      70% { opacity: 0.8; }
+      100% { transform: translateY(-10vh) rotate(10deg) scale(0.8); opacity: 0; }
+    }
+
+    /* extra little sparkles (hidden but sweet) */
+    .tiny-star {
+      position: fixed;
+      color: rgba(255, 255, 180, 0.6);
+      font-size: 1rem;
+      pointer-events: none;
+      z-index: 5;
+    }
+
+    /* responsiveness */
+    @media (max-width: 550px) {
+      .container { padding: 1.8rem 1.2rem; border-radius: 40px; }
+      h1 { font-size: 2.8rem; flex-direction: column; gap: 0; }
+      h1 span { font-size: 1.9rem; }
+      .names { font-size: 1.1rem; }
+      .message { font-size: 1.15rem; padding: 1.5rem; }
+      button { font-size: 1.2rem; padding: 0.8rem 2rem; }
+    }
+  </style>
 </head>
-
 <body>
 
-<!-- Light Romantic Music -->
-<audio autoplay loop>
-<source src="https://cdn.pixabay.com/download/audio/2023/03/20/audio_19f6dfc00c.mp3?filename=soft-romantic-ambient-14368.mp3" type="audio/mp3">
+<!-- soft romantic music (autoplay with lower volume is ideal, but autoplay policies vary) -->
+<audio autoplay loop volume="0.2">
+  <source src="https://cdn.pixabay.com/download/audio/2023/03/20/audio_19f6dfc00c.mp3?filename=soft-romantic-ambient-14368.mp3" type="audio/mp3">
 </audio>
 
 <div class="container">
 
-<h1>Felix ❤️ Ivone</h1>
-<div class="names">A Love That Feels Like Destiny</div>
+  <h1>
+    <span>Felix</span> ❤️ <span>Ivone</span>
+  </h1>
+  <div class="names">A love that feels like destiny</div>
 
-<div class="message">
-My Sweet Ivone,  
+  <div class="message">
+    <i>🌹 My sweet Ivone,</i>
+    <p>Loving you is the most beautiful thing that has ever happened in my life.<br>You walked into my world and turned ordinary days into magical moments.</p>
+    <p>Your smile heals my heart.<br>Your voice gives me peace.<br>Your love gives me strength.</p>
+    <p>Before you, I never knew love could feel this deep, this pure, this powerful.</p>
+    <p>You are not just my girlfriend —<br>you are my best friend, my comfort, my future, my forever.</p>
+  </div>
 
-Loving you is the most beautiful thing that has ever happened in my life.  
-You walked into my world and turned ordinary days into magical moments.  
+  <button onclick="showLove()">💌 Read my promise 💖</button>
 
-Your smile heals my heart.  
-Your voice gives me peace.  
-Your love gives me strength.  
+  <div class="card" id="loveCard">
+    🌹 Ivone,<br><br>
+    I promise to love you when days are bright<br>and when they are dark.<br><br>
+    I promise to choose you every single day.<br>To support you. To respect you.<br>To protect your heart.<br><br>
+    No matter where life takes us,<br>my heart belongs to you.<br><br>
+    Forever yours,<br>
+    <strong style="font-size:1.7rem; letter-spacing:1px;">Felix Nyabuto</strong> ❤️
+  </div>
 
-Before you, I never knew love could feel this deep, this pure, this powerful.  
-
-You are not just my girlfriend —  
-you are my best friend, my comfort, my future, my forever.  
-</div>
-
-<button onclick="showLove()">Read My Promise 💖</button>
-
-<div class="card" id="loveCard">
-🌹 Ivone,  
-
-I promise to love you when days are bright  
-and when they are dark.  
-
-I promise to choose you every single day.  
-To support you.  
-To respect you.  
-To protect your heart.  
-
-No matter where life takes us,  
-my heart belongs to you.  
-
-Forever yours,  
-Felix Nyabuto ❤️
-</div>
-
-<footer>
-Made with love by Felix Nyabuto 💕
-</footer>
-
+  <footer>
+    Made with infinite love by Felix Nyabuto 💕
+  </footer>
 </div>
 
 <script>
+  function showLove() {
+    const card = document.getElementById("loveCard");
+    card.style.display = "block";
+    // gentle scroll to card
+    card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
 
-/* Show Card */
-function showLove(){
-    document.getElementById("loveCard").style.display="block";
-}
-
-/* Optimized Floating Hearts (only 1 every 2 seconds) */
-function createHeart(){
-    const heart=document.createElement("div");
-    heart.className="heart";
-    heart.innerHTML="❤️";
-    heart.style.left=Math.random()*100+"vw";
+  // create floating hearts less frequently, but more graceful
+  function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    // random heart variation
+    const hearts = ['❤️', '🧡', '💖', '💗', '💘', '💕', '♥️'];
+    heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+    heart.style.left = Math.random() * 100 + "%";
+    heart.style.fontSize = (Math.random() * 1.6 + 1.2) + "rem"; // between 1.2rem and 2.8rem
+    heart.style.animationDuration = (Math.random() * 6 + 6) + "s"; // 6-12s slower rise
+    heart.style.opacity = Math.random() * 0.5 + 0.4; 
     document.body.appendChild(heart);
-    setTimeout(()=>heart.remove(),6000);
-}
 
-setInterval(createHeart,2000);
+    // remove after animation ends (+ buffer)
+    setTimeout(() => {
+      if (heart && heart.parentNode) heart.remove();
+    }, 13000);
+  }
 
+  // reduce frequency: every 2.3 seconds (more airy)
+  setInterval(createHeart, 2300);
+
+  // also add a couple of tiny sparkles occasionally (optional)
+  function createSparkle() {
+    const spark = document.createElement("div");
+    spark.className = "tiny-star";
+    spark.innerHTML = '✨';
+    spark.style.left = Math.random() * 100 + "%";
+    spark.style.top = Math.random() * 100 + "%";
+    spark.style.fontSize = (Math.random() * 0.8 + 0.6) + "rem";
+    spark.style.opacity = 0.5;
+    spark.style.animation = "rise 7s linear infinite";
+    document.body.appendChild(spark);
+    setTimeout(() => spark.remove(), 7000);
+  }
+  // a few sparkles but not overwhelming
+  setInterval(createSparkle, 4000);
 </script>
 
-</body>
-</html>}
-
-/* Names */
-.names{
-    font-size:24px;
-    margin-top:10px;
-    letter-spacing:2px;
-}
-
-/* Beating Heart */
-.beat{
-    font-size:40px;
-    animation:beat 1s infinite;
-}
-
-@keyframes beat{
-    0%{transform:scale(1);}
-    50%{transform:scale(1.3);}
-    100%{transform:scale(1);}
-}
-
-/* Long Message */
-.message{
-    font-size:20px;
-    margin-top:20px;
-    line-height:1.8;
-    max-width:800px;
-    margin-left:auto;
-    margin-right:auto;
-}
-
-/* Button */
-button{
-    margin-top:25px;
-    padding:14px 35px;
-    font-size:18px;
-    border-radius:40px;
-    border:none;
-    background:white;
-    color:#cc0066;
-    cursor:pointer;
-    transition:0.4s;
-}
-
-button:hover{
-    background:red;
-    color:white;
-    transform:scale(1.1);
-}
-
-/* Hidden Section */
-.hidden{
-    display:none;
-    font-size:22px;
-    margin-top:25px;
-    animation:fadeIn 3s forwards;
-}
-
-/* Fade */
-@keyframes fadeIn{
-    from{opacity:0;}
-    to{opacity:1;}
-}
-
-/* Floating Hearts & Petals */
-.floating{
-    position:absolute;
-    animation:float 8s linear infinite;
-}
-
-@keyframes float{
-    from{transform:translateY(100vh);opacity:1;}
-    to{transform:translateY(-10vh);opacity:0;}
-}
-
-/* Signature */
-.signature{
-    position:fixed;
-    bottom:10px;
-    width:100%;
-    font-size:14px;
-    opacity:0.8;
-}
-
-/* Fireworks Canvas */
-canvas{
-    position:fixed;
-    top:0;
-    left:0;
-    pointer-events:none;
-}
-</style>
-</head>
-
-<body>
-
-<!-- Romantic Music -->
-<audio autoplay loop>
-<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73467.mp3?filename=romantic-background-11386.mp3" type="audio/mp3">
-</audio>
-
-<canvas id="fireworks"></canvas>
-
-<div class="container">
-
-<h1>Felix ❤️ Ivone</h1>
-
-<div class="names">A Love Written in Destiny</div>
-
-<div class="beat">❤️</div>
-
-<div class="message">
-My Sweet Ivone,  
-
-Every time I look at you, I see my future.  
-Every time you smile, my heart melts.  
-You are the light in my darkest days,  
-the calm in my chaos,  
-the love I prayed for without knowing your name.  
-
-Before you, love was just a word.  
-With you, love became real.  
-
-I don’t just love you because you are beautiful —  
-I love you because you make me a better man.  
-You inspire me.  
-You strengthen me.  
-You complete me.  
-
-Ivone, you are my happiness,  
-my peace,  
-my forever dream.  
-
-And I, Felix Nyabuto,  
-promise to love you deeply,  
-honestly,  
-and endlessly.  
-</div>
-
-<button onclick="showLove()">Click To See My Promise 💖</button>
-
-<div id="finalMessage" class="hidden">
-🌹 Ivone,  
-
-No matter what happens in this world,  
-my heart will always choose you.  
-
-Through struggles.  
-Through success.  
-Through every season of life.  
-
-I will hold your hand.  
-I will protect your heart.  
-I will stand beside you.  
-
-You are my once in a lifetime.  
-You are my forever.  
-
-Forever yours,  
-Felix Nyabuto ❤️
-</div>
-
-</div>
-
-<div class="signature">
-Made with endless love by Felix Nyabuto 💕
-</div>
-
+<!-- initial hearts on load -->
 <script>
-
-/* Floating Hearts + Petals */
-function createFloating(symbol){
-    const el=document.createElement("div");
-    el.className="floating";
-    el.innerHTML=symbol;
-    el.style.left=Math.random()*100+"vw";
-    el.style.fontSize=(20+Math.random()*20)+"px";
-    document.body.appendChild(el);
-    setTimeout(()=>el.remove(),8000);
-}
-
-setInterval(()=>createFloating("❤️"),400);
-setInterval(()=>createFloating("🌸"),800);
-
-/* Show Message + Fireworks */
-function showLove(){
-    document.getElementById("finalMessage").style.display="block";
-    launchFireworks();
-}
-
-/* Fireworks */
-const canvas=document.getElementById("fireworks");
-const ctx=canvas.getContext("2d");
-canvas.width=window.innerWidth;
-canvas.height=window.innerHeight;
-
-let particles=[];
-
-function launchFireworks(){
-    for(let i=0;i<150;i++){
-        particles.push({
-            x:canvas.width/2,
-            y:canvas.height/2,
-            radius:2,
-            color:"hsl("+Math.random()*360+",100%,60%)",
-            speedX:(Math.random()-0.5)*10,
-            speedY:(Math.random()-0.5)*10,
-            life:100
-        });
+  window.onload = () => {
+    for (let i = 0; i < 4; i++) {
+      setTimeout(() => createHeart(), i * 300);
     }
-}
-
-function animate(){
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-    particles.forEach((p,index)=>{
-        p.x+=p.speedX;
-        p.y+=p.speedY;
-        p.life--;
-        ctx.beginPath();
-        ctx.arc(p.x,p.y,p.radius,0,Math.PI*2);
-        ctx.fillStyle=p.color;
-        ctx.fill();
-        if(p.life<=0){
-            particles.splice(index,1);
-        }
-    });
-    requestAnimationFrame(animate);
-}
-animate();
-
+  };
 </script>
 
 </body>
