@@ -1,40 +1,176 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Felix ❤️ Ivone Forever</title>
+<title>Felix ❤️ Ivone</title>
 
 <style>
 body{
     margin:0;
-    padding:0;
     font-family:'Segoe UI', sans-serif;
-    background:linear-gradient(135deg,#ff004f,#ff66a3,#990033);
-    overflow:hidden;
+    background:linear-gradient(135deg,#ff4b7d,#ff0066);
     color:white;
     text-align:center;
+    overflow-x:hidden;
 }
 
-/* Container */
+/* Center Section */
 .container{
-    position:relative;
-    top:8%;
-    padding:20px;
-    z-index:10;
-    animation:fadeIn 3s ease-in-out;
+    padding:60px 20px;
+    animation:fadeIn 2s ease-in;
 }
 
-/* Glow Title */
 h1{
-    font-size:40px;
-    animation:glow 2s infinite alternate;
+    font-size:38px;
+    margin-bottom:10px;
 }
 
-@keyframes glow{
-    from{text-shadow:0 0 10px white;}
-    to{text-shadow:0 0 40px pink,0 0 70px red;}
+.names{
+    font-size:20px;
+    margin-bottom:30px;
+    opacity:0.9;
 }
+
+.message{
+    max-width:700px;
+    margin:auto;
+    font-size:19px;
+    line-height:1.8;
+}
+
+button{
+    margin-top:30px;
+    padding:14px 35px;
+    font-size:18px;
+    border:none;
+    border-radius:30px;
+    background:white;
+    color:#ff0066;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#ff0066;
+    color:white;
+}
+
+/* Love Card */
+.card{
+    margin-top:40px;
+    padding:25px;
+    background:rgba(255,255,255,0.1);
+    border-radius:20px;
+    backdrop-filter:blur(10px);
+    display:none;
+    animation:fadeIn 2s forwards;
+}
+
+/* Fade Animation */
+@keyframes fadeIn{
+    from{opacity:0;transform:translateY(20px);}
+    to{opacity:1;transform:translateY(0);}
+}
+
+/* Soft Floating Hearts (LESS elements) */
+.heart{
+    position:fixed;
+    font-size:20px;
+    animation:float 6s linear infinite;
+}
+
+@keyframes float{
+    from{transform:translateY(100vh);opacity:1;}
+    to{transform:translateY(-10vh);opacity:0;}
+}
+
+/* Footer */
+footer{
+    margin-top:60px;
+    font-size:14px;
+    opacity:0.8;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Light Romantic Music -->
+<audio autoplay loop>
+<source src="https://cdn.pixabay.com/download/audio/2023/03/20/audio_19f6dfc00c.mp3?filename=soft-romantic-ambient-14368.mp3" type="audio/mp3">
+</audio>
+
+<div class="container">
+
+<h1>Felix ❤️ Ivone</h1>
+<div class="names">A Love That Feels Like Destiny</div>
+
+<div class="message">
+My Sweet Ivone,  
+
+Loving you is the most beautiful thing that has ever happened in my life.  
+You walked into my world and turned ordinary days into magical moments.  
+
+Your smile heals my heart.  
+Your voice gives me peace.  
+Your love gives me strength.  
+
+Before you, I never knew love could feel this deep, this pure, this powerful.  
+
+You are not just my girlfriend —  
+you are my best friend, my comfort, my future, my forever.  
+</div>
+
+<button onclick="showLove()">Read My Promise 💖</button>
+
+<div class="card" id="loveCard">
+🌹 Ivone,  
+
+I promise to love you when days are bright  
+and when they are dark.  
+
+I promise to choose you every single day.  
+To support you.  
+To respect you.  
+To protect your heart.  
+
+No matter where life takes us,  
+my heart belongs to you.  
+
+Forever yours,  
+Felix Nyabuto ❤️
+</div>
+
+<footer>
+Made with love by Felix Nyabuto 💕
+</footer>
+
+</div>
+
+<script>
+
+/* Show Card */
+function showLove(){
+    document.getElementById("loveCard").style.display="block";
+}
+
+/* Optimized Floating Hearts (only 1 every 2 seconds) */
+function createHeart(){
+    const heart=document.createElement("div");
+    heart.className="heart";
+    heart.innerHTML="❤️";
+    heart.style.left=Math.random()*100+"vw";
+    document.body.appendChild(heart);
+    setTimeout(()=>heart.remove(),6000);
+}
+
+setInterval(createHeart,2000);
+
+</script>
+
+</body>
+</html>}
 
 /* Names */
 .names{
