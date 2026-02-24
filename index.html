@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mkuu School of Forex | professional forex training</title>
-    <!-- Font Awesome 6 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Mkuu Forex School · mobile</title>
+    <!-- Font Awesome 6 (free) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
@@ -15,490 +15,478 @@
         }
 
         body {
-            background: linear-gradient(145deg, #eef6fc 0%, #d9e9f5 100%);
+            background: #d9ebf7;  /* soft blue background */
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 2rem 1.5rem;
+            padding: 12px;          /* smaller padding for mobile */
         }
 
-        /* main white card — clean, real, elevated */
-        .school-card {
-            max-width: 1300px;
+        /* main card – fills width, rounded, pure white */
+        .mobile-card {
+            max-width: 420px;        /* perfect for mobile width */
             width: 100%;
-            background: #ffffff;
-            border-radius: 3rem 3rem 2.5rem 2.5rem;
-            box-shadow: 0 30px 60px rgba(0, 40, 80, 0.2), 0 15px 30px rgba(0, 20, 40, 0.15);
+            background: white;
+            border-radius: 40px 40px 32px 32px;
+            box-shadow: 0 20px 40px rgba(0, 50, 100, 0.25), 0 5px 12px rgba(0, 30, 60, 0.15);
             overflow: hidden;
-            transition: transform 0.2s ease;
+            transition: 0.2s;
+            margin: 0 auto;
         }
 
-        /* header with blue nuance */
-        .hero-section {
-            background: linear-gradient(135deg, #f8fcff, #e3f0fd);
-            padding: 3rem 2.5rem 2rem;
+        /* every section uses white or light blue */
+        .hero-mobile {
+            background: linear-gradient(145deg, #ffffff, #f2f9ff);
+            padding: 2rem 1.5rem 1.8rem;
             text-align: center;
-            border-bottom: 1px solid rgba(0, 110, 230, 0.15);
+            border-bottom: 1px solid #cee5fc;
         }
 
         .school-name {
-            font-size: 3.2rem;
+            font-size: 2.2rem;          /* scaled for mobile */
             font-weight: 800;
             letter-spacing: -0.02em;
-            color: #0b2d4b;
+            color: #0a3149;
             line-height: 1.2;
             text-transform: uppercase;
             word-break: break-word;
         }
 
         .school-name span {
-            color: #1a5e9c;
-            background: linear-gradient(145deg, #1e4c7a, #1360a3);
+            color: #1e5691;
+            background: linear-gradient(145deg, #16548b, #1d70b5);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             font-weight: 900;
         }
 
-        .subhead {
-            font-size: 1.3rem;
-            color: #2c577c;
-            margin-top: 0.75rem;
-            font-weight: 400;
-            border-bottom: 2px solid #9fc7e8;
+        .subhead-mobile {
+            font-size: 1.1rem;
+            color: #2b6190;
+            margin-top: 0.4rem;
+            border-bottom: 2px solid #b2d6f3;
             display: inline-block;
-            padding-bottom: 0.5rem;
+            padding-bottom: 0.4rem;
         }
 
-        /* owner block — clean badge */
-        .owner-contact-row {
+        /* owner row – compact but clear */
+        .owner-mobile-row {
+            background: #e2f0fd;
+            border-radius: 60px;
+            padding: 0.75rem 1.2rem;
+            margin: 1.5rem 0 1.2rem;
             display: flex;
             flex-wrap: wrap;
             align-items: center;
             justify-content: center;
-            gap: 1.8rem;
-            margin: 2rem 0 1.2rem;
-            background: #ffffffcc;
-            backdrop-filter: blur(6px);
-            padding: 1rem 2rem;
-            border-radius: 80px;
-            box-shadow: 0 6px 16px rgba(0,67,117,0.08);
-            border: 1px solid #c2dcf1;
+            gap: 0.6rem 1rem;
+            border: 1px solid #b3d6f3;
+            box-shadow: inset 0 1px 4px white, 0 4px 8px #b0ceed;
         }
 
-        .owner-number-badge {
-            background: #e9f2fa;
-            padding: 0.6rem 1.8rem;
+        .owner-phone {
+            background: white;
             border-radius: 60px;
-            font-size: 1.6rem;
+            padding: 0.4rem 1.2rem;
+            font-size: 1.4rem;
             font-weight: 700;
-            color: #0a3b5c;
-            box-shadow: inset 0 -2px 0 #b9d3ed;
-        }
-
-        .owner-number-badge i {
-            color: #128C7E;
-            margin-right: 10px;
-            font-size: 1.9rem;
-        }
-
-        .owner-label {
-            font-size: 1.1rem;
-            background: #daeaf5;
-            padding: 0.3rem 1.2rem;
-            border-radius: 30px;
-            color: #0e4b77;
-            font-weight: 500;
-        }
-
-        /* main CTA button — fresh, clickable */
-        .enrol-wa-primary {
-            background: #25D366;
-            border: none;
-            color: white;
-            font-weight: 700;
-            font-size: 1.8rem;
-            padding: 0.9rem 3rem;
-            border-radius: 70px;
+            color: #15507b;
             display: inline-flex;
             align-items: center;
-            gap: 15px;
-            text-decoration: none;
-            box-shadow: 0 12px 0 #128C7E, 0 15px 30px #25D36660;
-            transition: 0.15s ease;
-            border: 2px solid white;
-            margin: 1rem 0 0.5rem;
+            gap: 8px;
+            box-shadow: 0 2px 0 #9cc0e3;
         }
 
-        .enrol-wa-primary:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 16px 0 #128C7E, 0 20px 35px #25D36690;
+        .owner-phone i {
+            color: #25D366;
+            font-size: 1.8rem;
         }
 
-        .enrol-wa-primary:active {
-            transform: translateY(6px);
-            box-shadow: 0 6px 0 #128C7E;
-        }
-
-        .wa-hint {
-            color: #31739e;
-            font-size: 1rem;
-            margin-top: 0.7rem;
-            font-weight: 400;
-        }
-
-        /* pricing cards — whitish, subtle blue */
-        .pricing-row {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2.5rem;
-            padding: 3rem 2rem;
-            background: #f4fafd;
-        }
-
-        .plan-card {
-            background: white;
-            border-radius: 2.5rem;
-            padding: 2.5rem 2rem;
-            width: 300px;
-            text-align: center;
-            box-shadow: 0 20px 35px #b0cfeb4d, 0 5px 0 #c2d9ed, 0 0 0 1px #cddef2;
-            transition: 0.2s;
-        }
-
-        .plan-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 28px 45px #92bde0, 0 5px 0 #9cc0e3, 0 0 0 1px #97c0e4;
-        }
-
-        .plan-badge {
-            background: #1f6290;
-            color: white;
-            padding: 0.5rem 1.5rem;
+        .owner-label-mobile {
+            background: #c6e1fa;
             border-radius: 40px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            letter-spacing: 0.5px;
-            display: inline-block;
-            margin-bottom: 1.8rem;
-            border: 2px solid white;
-            box-shadow: 0 4px 0 #0e3d60;
-        }
-
-        .price {
-            font-size: 3.5rem;
-            font-weight: 800;
-            color: #10436b;
-            line-height: 1;
-        }
-
-        .price small {
-            font-size: 1.3rem;
-            font-weight: 500;
-            color: #5882b7;
-        }
-
-        .plan-desc {
-            color: #2a577b;
+            padding: 0.25rem 1rem;
             font-size: 1rem;
-            border-top: 2px dashed #afceec;
-            margin: 1.2rem 0 2rem;
-            padding-top: 1.2rem;
+            font-weight: 500;
+            color: #0e4872;
         }
 
-        .wa-small {
+        /* main enrol button — fits thumb */
+        .wa-primary-mobile {
+            background: #25D366;
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 1rem 1rem;
+            border-radius: 60px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-decoration: none;
+            box-shadow: 0 8px 0 #128C7E, 0 12px 20px #25D36670;
+            transition: 0.1s;
+            border: 2px solid white;
+            margin: 0.8rem 0 0.2rem;
+        }
+
+        .wa-primary-mobile:active {
+            transform: translateY(5px);
+            box-shadow: 0 3px 0 #128C7E;
+        }
+
+        .hint-mobile {
+            font-size: 0.85rem;
+            color: #3b6e99;
+            margin-top: 0.5rem;
+        }
+
+        /* pricing cards stacked, full width */
+        .pricing-stack {
+            padding: 2rem 1.2rem;
+            background: #f6fbfe;
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+        }
+
+        .plan-mobile {
+            background: white;
+            border-radius: 32px;
+            padding: 1.8rem 1.5rem;
+            box-shadow: 0 10px 18px #b8d6f0, 0 2px 0 #9dc0e1;
+            border: 1px solid #c7e0f7;
+            text-align: center;
+        }
+
+        .plan-badge-mobile {
+            background: #1b6aaa;
+            color: white;
+            border-radius: 50px;
+            padding: 0.3rem 1.2rem;
+            font-weight: 600;
+            font-size: 1rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+            border: 2px solid white;
+            box-shadow: 0 3px 0 #0d3f63;
+        }
+
+        .price-mobile {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #134978;
+            line-height: 1.2;
+        }
+
+        .price-mobile small {
+            font-size: 1.2rem;
+            color: #487bb3;
+        }
+
+        .plan-desc-mobile {
+            color: #28567c;
+            font-size: 1rem;
+            border-top: 2px dashed #b8d8f5;
+            margin: 1rem 0 1.8rem;
+            padding-top: 1rem;
+        }
+
+        .wa-small-mobile {
             background: #25D366;
             color: white;
             border-radius: 50px;
-            padding: 1rem 1.2rem;
-            font-weight: 600;
+            padding: 1rem;
             text-decoration: none;
+            font-weight: 600;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
             font-size: 1.2rem;
-            box-shadow: 0 6px 0 #128C7E;
-            transition: 0.1s;
+            box-shadow: 0 5px 0 #128C7E;
             width: 100%;
         }
 
-        .wa-small:hover {
-            background: #20b558;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 0 #128C7E;
+        .wa-small-mobile:active {
+            transform: translateY(3px);
+            box-shadow: 0 2px 0 #128C7E;
         }
 
-        .wa-small:active {
-            transform: translateY(4px);
-            box-shadow: 0 3px 0 #128C7E;
-        }
-
-        /* features grid — light & airy */
-        .feature-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2.5rem 4rem;
-            padding: 3rem 2.5rem;
+        /* features grid – 2 columns on small, perfect */
+        .features-mobile-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem 1rem;
+            padding: 2rem 1.2rem;
             background: white;
-            border-top: 2px solid #cbe0f2;
-            border-bottom: 2px solid #cbe0f2;
+            border-top: 2px solid #d3e8fd;
+            border-bottom: 2px solid #d3e8fd;
         }
 
-        .feature {
+        .feature-mobile-item {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 1.2rem;
-            min-width: 220px;
+            text-align: center;
         }
 
-        .feature-icon {
-            background: #ddeeff;
-            width: 65px;
-            height: 65px;
-            border-radius: 30px;
+        .feature-icon-mobile {
+            background: #e3f0ff;
+            width: 55px;
+            height: 55px;
+            border-radius: 28px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
-            color: #1a6290;
-            box-shadow: 0 8px 0 #b1cae2;
+            font-size: 1.8rem;
+            color: #1d6195;
+            margin-bottom: 0.5rem;
+            box-shadow: 0 4px 0 #b6d2ef;
         }
 
-        .feature-text h4 {
-            font-size: 1.3rem;
+        .feature-text-mobile h4 {
+            font-size: 1.1rem;
             font-weight: 700;
-            color: #0b3552;
+            color: #0e3f62;
         }
 
-        .feature-text p {
-            color: #36698b;
-            font-weight: 400;
+        .feature-text-mobile p {
+            font-size: 0.8rem;
+            color: #3b709b;
         }
 
-        /* testimonial / proof */
-        .testimonial-block {
-            background: #e9f2fa;
-            padding: 2.5rem 2rem;
+        /* testimonial */
+        .testimonial-mobile {
+            background: #e6f1fe;
+            padding: 1.8rem 1.5rem;
             text-align: center;
-            font-size: 1.7rem;
-            font-weight: 400;
-            color: #124062;
-            border-bottom: 2px solid #c1daf0;
+            font-size: 1.3rem;
+            font-style: italic;
+            color: #15568b;
+            border-bottom: 2px solid #bdd5f0;
         }
 
-        .testimonial-block i {
-            color: #1e6eb5;
-            margin: 0 15px;
+        .stars-mobile {
+            color: #f5b342;
+            font-size: 1.5rem;
+            letter-spacing: 6px;
+            margin: 0.3rem 0;
         }
 
-        .stars {
-            color: #ffb347;
-            font-size: 1.7rem;
-            margin-top: 0.8rem;
-            letter-spacing: 8px;
+        /* footer compact */
+        .footer-mobile {
+            background: #d2e8fd;
+            padding: 1.5rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            text-align: center;
         }
 
-        /* footer with whitish, blue details */
-        .footer-light {
-            background: #dbeafe;
-            padding: 1.8rem 2rem;
+        .footer-owner-mobile {
+            background: white;
+            border-radius: 60px;
+            padding: 0.5rem 1.8rem;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #11548c;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 3px 0 #99c2e8;
+        }
+
+        .footer-owner-mobile i {
+            color: #25D366;
+        }
+
+        .footer-row {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            gap: 1rem 1.5rem;
+            color: #215985;
+            font-size: 0.95rem;
+        }
+
+        .extra-cta-mobile {
+            background: white;
+            padding: 1.8rem 1.2rem 2rem;
+            text-align: center;
+        }
+
+        .wa-secondary-mobile {
+            background: white;
+            border: 3px solid #25D366;
+            color: #128C7E;
+            padding: 1rem 1.5rem;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 1.3rem;
+            display: inline-flex;
             align-items: center;
-            gap: 2.5rem;
-            color: #145982;
+            justify-content: center;
+            gap: 12px;
+            text-decoration: none;
+            box-shadow: 0 5px 0 #cbe6d9;
+            width: 100%;
+        }
+
+        .wa-secondary-mobile:active {
+            transform: translateY(3px);
+            box-shadow: 0 2px 0 #b3d5c2;
+        }
+
+        .mpesa-mobile {
+            color: #1f6290;
+            margin-top: 1rem;
+            font-size: 1rem;
             font-weight: 500;
         }
 
-        .footer-owner {
-            background: white;
-            padding: 0.5rem 2rem;
-            border-radius: 50px;
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: #0b4d7a;
-            box-shadow: 0 3px 0 #9dbedb;
-        }
-
-        .footer-owner i {
-            color: #25D366;
-            margin-right: 10px;
-        }
-
-        .extra-cta {
-            background: white;
-            text-align: center;
-            padding: 1.8rem 1rem 2.2rem;
-        }
-
-        .wa-secondary {
-            background: #ffffff;
-            border: 3px solid #25D366;
-            color: #128C7E;
-            padding: 1rem 2.5rem;
-            border-radius: 60px;
-            font-weight: 700;
-            font-size: 1.5rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 15px;
-            text-decoration: none;
-            transition: 0.1s;
-            box-shadow: 0 6px 0 #bee0ce;
-        }
-
-        .wa-secondary:hover {
-            background: #e3ffee;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 0 #a0cdb4;
-        }
-
-        .mpesa-hint {
-            color: #3975a1;
-            margin-top: 0.8rem;
-            font-size: 1.1rem;
-        }
-
-        @media (max-width: 600px) {
-            .school-name { font-size: 2.4rem; }
-            .owner-number-badge { font-size: 1.2rem; padding: 0.4rem 1rem; }
-            .enrol-wa-primary { font-size: 1.5rem; padding: 0.8rem 1.8rem; }
-            .owner-contact-row { flex-direction: column; gap: 0.8rem; }
+        /* tiny extra */
+        .plain-phone {
+            background: #eef4fa;
+            border-radius: 40px;
+            padding: 0.4rem 1.2rem;
+            display: inline-block;
+            color: #0b426b;
+            font-weight: 600;
         }
     </style>
 </head>
 <body>
-    <div class="school-card">
-        <!-- Hero: white/blues, owner number prominent -->
-        <div class="hero-section">
+    <div class="mobile-card">
+        <!-- hero section -->
+        <div class="hero-mobile">
             <h1 class="school-name">
                 <span>MKUU</span> SCHOOL OF <span>FOREX</span>
             </h1>
-            <div class="subhead">
-                <i class="fas fa-chart-line" style="color:#1f70b0;"></i> 
-                learn · earn · grow with us 
-                <i class="fas fa-flag-checkered" style="color:#1f70b0;"></i>
+            <div class="subhead-mobile">
+                <i class="fas fa-chart-line"></i> learn · earn · grow
             </div>
 
-            <!-- Owner info: clean and visible -->
-            <div class="owner-contact-row">
-                <div class="owner-number-badge">
+            <!-- owner number compact + visible -->
+            <div class="owner-mobile-row">
+                <div class="owner-phone">
                     <i class="fab fa-whatsapp"></i> 0757 475 437
                 </div>
-                <div class="owner-label">
-                    <i class="fas fa-user-tie"></i> Owner / head trainer
-                </div>
-                <div style="color:#2670a5;">
-                    <i class="fas fa-clock"></i> reply within 5min
+                <div class="owner-label-mobile">
+                    <i class="fas fa-user-graduate"></i> owner
                 </div>
             </div>
 
-            <!-- main ENROL button → whatsapp (prefilled message) -->
-            <a href="https://wa.me/254757475437?text=Hello%20Mkuu%20School%20of%20Forex!%20I%20want%20to%20enroll.%20Please%20guide%20me%20on%20the%20next%20steps.%20(5000%20KES%20monthly%20or%202500%20KES%20weekly)" 
-               class="enrol-wa-primary" target="_blank" rel="noopener">
-                <i class="fab fa-whatsapp"></i> ENROL NOW — CHAT OWNER
+            <!-- BIG THUMB-FRIENDLY ENROL BUTTON -->
+            <a href="https://wa.me/254757475437?text=Hello%20Mkuu%20School!%20I%20want%20to%20enroll%20now.%20Please%20guide%20me%20(5000%20monthly%20/%202500%20weekly)" 
+               class="wa-primary-mobile" target="_blank" rel="noopener">
+                <i class="fab fa-whatsapp"></i> ENROL · CLICK HERE
             </a>
-            <p class="wa-hint">
-                <i class="fas fa-lock" style="color:#1f70b0;"></i> click to open WhatsApp · 24/7
+            <p class="hint-mobile">
+                <i class="fas fa-lock" style="color:#1b5a8a;"></i> opens WhatsApp · 24/7 reply
             </p>
         </div>
 
-        <!-- PRICING: 5000/month, 2500/week (real & clear) -->
-        <div class="pricing-row">
-            <!-- Monthly card -->
-            <div class="plan-card">
-                <div class="plan-badge">⭐ MOST PICKED</div>
-                <div class="price">5,000 <small>KES</small></div>
-                <div class="plan-desc">
-                    <i class="fas fa-calendar-alt" style="color:#1f6eb0;"></i> per month<br>
-                    <span style="font-weight:600;">full mentorship + signals</span>
+        <!-- PRICING stacked for mobile  -->
+        <div class="pricing-stack">
+            <!-- monthly plan -->
+            <div class="plan-mobile">
+                <div class="plan-badge-mobile">🔥 MONTHLY · MOST POPULAR</div>
+                <div class="price-mobile">5,000 <small>KES</small></div>
+                <div class="plan-desc-mobile">
+                    <i class="fas fa-calendar-alt" style="color:#1e6eb0;"></i> full access · signals + community
                 </div>
-                <a href="https://wa.me/254757475437?text=I'm%20interested%20in%20MONTHLY%20plan%20(5000%20KES)%20at%20Mkuu%20School%20of%20Forex" 
-                   class="wa-small" target="_blank">
-                    <i class="fab fa-whatsapp"></i> select monthly
+                <a href="https://wa.me/254757475437?text=I%20want%20the%20MONTHLY%20plan%20(5000%20KES)%20at%20Mkuu%20School%20of%20Forex" 
+                   class="wa-small-mobile" target="_blank">
+                    <i class="fab fa-whatsapp"></i> choose monthly
                 </a>
             </div>
-            <!-- Weekly card -->
-            <div class="plan-card">
-                <div class="plan-badge" style="background: #3782b5;">⚡ FLEXIBLE</div>
-                <div class="price">2,500 <small>KES</small></div>
-                <div class="plan-desc">
-                    <i class="fas fa-clock" style="color:#1f6eb0;"></i> per week<br>
-                    <span style="font-weight:600;">same benefits · start now</span>
+
+            <!-- weekly plan -->
+            <div class="plan-mobile">
+                <div class="plan-badge-mobile" style="background:#2d7bb6;">⚡ WEEKLY · FLEXIBLE</div>
+                <div class="price-mobile">2,500 <small>KES</small></div>
+                <div class="plan-desc-mobile">
+                    <i class="fas fa-clock" style="color:#1e6eb0;"></i> per week · same benefits
                 </div>
-                <a href="https://wa.me/254757475437?text=Hi!%20I%20want%20to%20join%20WEEKLY%20plan%20(2500%20KES)%20at%20Mkuu%20School%20of%20Forex" 
-                   class="wa-small" target="_blank">
-                    <i class="fab fa-whatsapp"></i> select weekly
+                <a href="https://wa.me/254757475437?text=I%20want%20the%20WEEKLY%20plan%20(2500%20KES)%20at%20Mkuu%20School%20of%20Forex" 
+                   class="wa-small-mobile" target="_blank">
+                    <i class="fab fa-whatsapp"></i> choose weekly
                 </a>
             </div>
         </div>
 
-        <!-- Feature grid: adds value and realistic details -->
-        <div class="feature-grid">
-            <div class="feature">
-                <div class="feature-icon"><i class="fas fa-chalkboard-teacher"></i></div>
-                <div class="feature-text">
-                    <h4>Live training</h4>
-                    <p>4x week · Zoom & recordings</p>
+        <!-- feature grid : 2 columns nice on mobile -->
+        <div class="features-mobile-grid">
+            <div class="feature-mobile-item">
+                <div class="feature-icon-mobile"><i class="fas fa-chalkboard"></i></div>
+                <div class="feature-text-mobile">
+                    <h4>Live sessions</h4>
+                    <p>4x/week + recordings</p>
                 </div>
             </div>
-            <div class="feature">
-                <div class="feature-icon"><i class="fas fa-chart-pie"></i></div>
-                <div class="feature-text">
-                    <h4>VIP signals group</h4>
-                    <p>90% accuracy · entry/exit</p>
+            <div class="feature-mobile-item">
+                <div class="feature-icon-mobile"><i class="fas fa-robot"></i></div>
+                <div class="feature-text-mobile">
+                    <h4>Signals VIP</h4>
+                    <p>90% win rate</p>
                 </div>
             </div>
-            <div class="feature">
-                <div class="feature-icon"><i class="fas fa-user-friends"></i></div>
-                <div class="feature-text">
+            <div class="feature-mobile-item">
+                <div class="feature-icon-mobile"><i class="fas fa-users"></i></div>
+                <div class="feature-text-mobile">
                     <h4>Community</h4>
-                    <p>1,200+ active members</p>
+                    <p>1.2k+ members</p>
                 </div>
             </div>
-            <div class="feature">
-                <div class="feature-icon"><i class="fas fa-headset"></i></div>
-                <div class="feature-text">
-                    <h4>Owner support</h4>
-                    <p>direct line: 0757 475 437</p>
+            <div class="feature-mobile-item">
+                <div class="feature-icon-mobile"><i class="fas fa-headset"></i></div>
+                <div class="feature-text-mobile">
+                    <h4>Direct owner</h4>
+                    <p>0757 475 437</p>
                 </div>
             </div>
         </div>
 
-        <!-- testimonial / social proof -->
-        <div class="testimonial-block">
+        <!-- testimonial / proof -->
+        <div class="testimonial-mobile">
             <i class="fas fa-quote-left"></i> 
-            started with 5k, now trading funded accounts. mkuu school is legit.
+            from zero to funded, Mkuu is the real deal
             <i class="fas fa-quote-right"></i>
-            <div class="stars">★★★★★</div>
-            <div style="font-size:1.1rem; margin-top:0.5rem;">— Dennis, student since 2024</div>
+            <div class="stars-mobile">★★★★★</div>
+            <div style="font-size:1rem;">— Kevin, active trader</div>
         </div>
 
-        <!-- footer with owner number again, payment methods -->
-        <div class="footer-light">
-            <span><i class="fas fa-copyright"></i> Mkuu Forex </span>
-            <span class="footer-owner"><i class="fab fa-whatsapp"></i> 0757 475 437</span>
-            <span><i class="fas fa-money-bill-wave" style="color:#0f7942;"></i> M‑Pesa / bank transfer</span>
-            <span><i class="fas fa-clock"></i> enrol anytime</span>
-        </div>
-
-        <!-- second last CTA (extra clickable) -->
-        <div class="extra-cta">
-            <a href="https://wa.me/254757475437?text=I'm%20ready%20to%20enroll%20at%20Mkuu%20School%20of%20Forex%20-%20please%20share%20payment%20details%20for%20(5000%20monthly%20or%202500%20weekly)" 
-               class="wa-secondary" target="_blank">
-                <i class="fab fa-whatsapp" style="font-size:2rem;"></i> CLICK TO ENROL (WHATSAPP)
-            </a>
-            <div class="mpesa-hint">
-                <i class="fas fa-check-circle" style="color:#1e7e34;"></i> 
-                5000/month · 2500/week · instant access after payment
+        <!-- footer light with owner repeated -->
+        <div class="footer-mobile">
+            <div class="footer-owner-mobile">
+                <i class="fab fa-whatsapp"></i> 0757 475 437
             </div>
-            <div style="margin-top:1.2rem; color:#3f6e92;">
-                <i class="fas fa-phone-alt"></i> owner phone: <strong>0757 475 437</strong> (call / WhatsApp)
+            <div class="footer-row">
+                <span><i class="fas fa-money-bill-wave" style="color:#1f8b4c;"></i> M‑Pesa / bank</span>
+                <span><i class="fas fa-clock"></i> instant access</span>
+            </div>
+            <div style="font-size:0.9rem; color:#1d4b73;">
+                <i class="fas fa-copyright"></i> Mkuu Forex School
+            </div>
+        </div>
+
+        <!-- final clickable enrol (extra) -->
+        <div class="extra-cta-mobile">
+            <a href="https://wa.me/254757475437?text=I'm%20ready%20to%20join%20Mkuu%20School%20of%20Forex%20-%20please%20send%20payment%20details" 
+               class="wa-secondary-mobile" target="_blank">
+                <i class="fab fa-whatsapp" style="font-size:1.8rem;"></i> ENROL NOW (WA)
+            </a>
+            <div class="mpesa-mobile">
+                <i class="fas fa-check-circle" style="color:#2a9d4c;"></i> 5000/month · 2500/week
+            </div>
+            <div class="plain-phone" style="margin-top:1rem;">
+                <i class="fas fa-phone-alt"></i> owner: 0757 475 437
             </div>
         </div>
     </div>
